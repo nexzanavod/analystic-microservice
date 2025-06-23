@@ -1,0 +1,52 @@
+{
+    "kind": "collectionType",
+    "collectionName": "fb_ad_insights",
+    "info": {
+        "singularName": "fb-ad-insight",
+        "pluralName": "fb-ad-insights",
+        "displayName": "fbAdInsight",
+        "description": ""
+    },
+    "options": {
+        "draftAndPublish": false
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "impressions": {
+            "type": "integer"
+        },
+        "reach": {
+            "type": "integer"
+        },
+        "clicks": {
+            "type": "integer"
+        },
+        "spend": {
+            "type": "decimal"
+        },
+        "cpm": {
+            "type": "decimal"
+        },
+        "ctr": {
+            "type": "decimal"
+        },
+        "cpc": {
+            "type": "decimal"
+        },
+        "actions": {
+            "type": "json"
+        },
+        "fb_ads": {
+            "type": "relation",
+            "relation": "oneToMany",
+            "target": "api::fb-ad.fb-ad",
+            "mappedBy": "fb_ad_insight"
+        },
+        "date_start": {
+            "type": "date"
+        },
+        "date_stop": {
+            "type": "date"
+        }
+    }
+}

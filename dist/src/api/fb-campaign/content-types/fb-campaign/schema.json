@@ -1,0 +1,54 @@
+{
+    "kind": "collectionType",
+    "collectionName": "fb_campaigns",
+    "info": {
+        "singularName": "fb-campaign",
+        "pluralName": "fb-campaigns",
+        "displayName": "fbCampaign"
+    },
+    "options": {
+        "draftAndPublish": false
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "fb_campaign_id": {
+            "type": "string"
+        },
+        "name": {
+            "type": "string"
+        },
+        "objective": {
+            "type": "string"
+        },
+        "effective_status": {
+            "type": "string"
+        },
+        "daily_budget": {
+            "type": "string"
+        },
+        "lifetime_budget": {
+            "type": "string"
+        },
+        "impressions": {
+            "type": "string"
+        },
+        "reach": {
+            "type": "string"
+        },
+        "spend": {
+            "type": "string"
+        },
+        "fb_page": {
+            "type": "relation",
+            "relation": "manyToOne",
+            "target": "api::fb-page.fb-page",
+            "inversedBy": "fb_campaigns"
+        },
+        "fb_ads": {
+            "type": "relation",
+            "relation": "oneToMany",
+            "target": "api::fb-ad.fb-ad",
+            "mappedBy": "fb_campaign"
+        }
+    }
+}

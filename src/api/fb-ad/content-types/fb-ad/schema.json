@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "fb_ads",
+  "info": {
+    "singularName": "fb-ad",
+    "pluralName": "fb-ads",
+    "displayName": "fbAd",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "fb_ad_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "effective_status": {
+      "type": "string"
+    },
+    "image_url": {
+      "type": "text"
+    },
+    "creative_text": {
+      "type": "text"
+    },
+    "call_to_action": {
+      "type": "string"
+    },
+    "fb_campaign": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::fb-campaign.fb-campaign",
+      "inversedBy": "fb_ads"
+    },
+    "fb_ad_insight": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::fb-ad-insight.fb-ad-insight",
+      "inversedBy": "fb_ads"
+    }
+  }
+}

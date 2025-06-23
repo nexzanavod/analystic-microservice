@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "fb_pages",
+  "info": {
+    "singularName": "fb-page",
+    "pluralName": "fb-pages",
+    "displayName": "fbPage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "facebook_page_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
+    },
+    "daily_fb_page_analytics": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::daily-fb-page-analytic.daily-fb-page-analytic",
+      "mappedBy": "fb_page"
+    },
+    "icon": {
+      "type": "string"
+    },
+    "audience_growths": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::audience-growth.audience-growth",
+      "mappedBy": "fb_page"
+    },
+    "fb_campaigns": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::fb-campaign.fb-campaign",
+      "mappedBy": "fb_page"
+    },
+    "facebook_ad_account_id": {
+      "type": "string"
+    }
+  }
+}

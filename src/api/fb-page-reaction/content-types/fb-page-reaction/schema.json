@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "fb_page_reactions",
+  "info": {
+    "singularName": "fb-page-reaction",
+    "pluralName": "fb-page-reactions",
+    "displayName": "fbPageReaction",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "like": {
+      "type": "integer"
+    },
+    "loves": {
+      "type": "integer"
+    },
+    "wows": {
+      "type": "integer"
+    },
+    "hahas": {
+      "type": "integer"
+    },
+    "sorrys": {
+      "type": "integer"
+    },
+    "angers": {
+      "type": "integer"
+    },
+    "date": {
+      "type": "datetime"
+    }
+  }
+}

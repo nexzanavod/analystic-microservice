@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "fb_admin_users",
+  "info": {
+    "singularName": "fb-admin-user",
+    "pluralName": "fb-admin-users",
+    "displayName": "fbAdminUser",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "email": {
+      "type": "email"
+    },
+    "access_token": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "facebook_user_id": {
+      "type": "string"
+    }
+  }
+}

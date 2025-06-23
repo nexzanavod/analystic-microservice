@@ -362,6 +362,338 @@ export interface AdminUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiAudienceGrowthAudienceGrowth extends Schema.CollectionType {
+  collectionName: 'audience_growths';
+  info: {
+    description: '';
+    displayName: 'audienceGrowth';
+    pluralName: 'audience-growths';
+    singularName: 'audience-growth';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    createdAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::audience-growth.audience-growth',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    date: Attribute.DateTime;
+    fb_page: Attribute.Relation<
+      'api::audience-growth.audience-growth',
+      'manyToOne',
+      'api::fb-page.fb-page'
+    >;
+    followers: Attribute.Integer;
+    new_followers: Attribute.Integer;
+    updatedAt: Attribute.DateTime;
+    updatedBy: Attribute.Relation<
+      'api::audience-growth.audience-growth',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiDailyFbPageAnalyticDailyFbPageAnalytic
+  extends Schema.CollectionType {
+  collectionName: 'daily_fb_page_analytics';
+  info: {
+    description: '';
+    displayName: 'dailyFBPageAnalytic';
+    pluralName: 'daily-fb-page-analytics';
+    singularName: 'daily-fb-page-analytic';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    createdAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::daily-fb-page-analytic.daily-fb-page-analytic',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    date: Attribute.DateTime;
+    engagements: Attribute.Integer;
+    fb_page: Attribute.Relation<
+      'api::daily-fb-page-analytic.daily-fb-page-analytic',
+      'manyToOne',
+      'api::fb-page.fb-page'
+    >;
+    followers: Attribute.Integer;
+    impressions: Attribute.Integer;
+    reach: Attribute.Integer;
+    updatedAt: Attribute.DateTime;
+    updatedBy: Attribute.Relation<
+      'api::daily-fb-page-analytic.daily-fb-page-analytic',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    views: Attribute.Integer;
+  };
+}
+
+export interface ApiFbAdInsightFbAdInsight extends Schema.CollectionType {
+  collectionName: 'fb_ad_insights';
+  info: {
+    description: '';
+    displayName: 'fbAdInsight';
+    pluralName: 'fb-ad-insights';
+    singularName: 'fb-ad-insight';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    actions: Attribute.JSON;
+    clicks: Attribute.Integer;
+    cpc: Attribute.Decimal;
+    cpm: Attribute.Decimal;
+    createdAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::fb-ad-insight.fb-ad-insight',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    ctr: Attribute.Decimal;
+    date_start: Attribute.Date;
+    date_stop: Attribute.Date;
+    fb_ads: Attribute.Relation<
+      'api::fb-ad-insight.fb-ad-insight',
+      'oneToMany',
+      'api::fb-ad.fb-ad'
+    >;
+    impressions: Attribute.Integer;
+    reach: Attribute.Integer;
+    spend: Attribute.Decimal;
+    updatedAt: Attribute.DateTime;
+    updatedBy: Attribute.Relation<
+      'api::fb-ad-insight.fb-ad-insight',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiFbAdFbAd extends Schema.CollectionType {
+  collectionName: 'fb_ads';
+  info: {
+    description: '';
+    displayName: 'fbAd';
+    pluralName: 'fb-ads';
+    singularName: 'fb-ad';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    call_to_action: Attribute.String;
+    createdAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::fb-ad.fb-ad',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    creative_text: Attribute.Text;
+    effective_status: Attribute.String;
+    fb_ad_id: Attribute.String;
+    fb_ad_insight: Attribute.Relation<
+      'api::fb-ad.fb-ad',
+      'manyToOne',
+      'api::fb-ad-insight.fb-ad-insight'
+    >;
+    fb_campaign: Attribute.Relation<
+      'api::fb-ad.fb-ad',
+      'manyToOne',
+      'api::fb-campaign.fb-campaign'
+    >;
+    image_url: Attribute.Text;
+    name: Attribute.String;
+    updatedAt: Attribute.DateTime;
+    updatedBy: Attribute.Relation<
+      'api::fb-ad.fb-ad',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiFbAdminUserFbAdminUser extends Schema.CollectionType {
+  collectionName: 'fb_admin_users';
+  info: {
+    description: '';
+    displayName: 'fbAdminUser';
+    pluralName: 'fb-admin-users';
+    singularName: 'fb-admin-user';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    access_token: Attribute.String;
+    createdAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::fb-admin-user.fb-admin-user',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    email: Attribute.Email;
+    facebook_user_id: Attribute.String;
+    name: Attribute.String;
+    updatedAt: Attribute.DateTime;
+    updatedBy: Attribute.Relation<
+      'api::fb-admin-user.fb-admin-user',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiFbCampaignFbCampaign extends Schema.CollectionType {
+  collectionName: 'fb_campaigns';
+  info: {
+    displayName: 'fbCampaign';
+    pluralName: 'fb-campaigns';
+    singularName: 'fb-campaign';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    createdAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::fb-campaign.fb-campaign',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    daily_budget: Attribute.String;
+    effective_status: Attribute.String;
+    fb_ads: Attribute.Relation<
+      'api::fb-campaign.fb-campaign',
+      'oneToMany',
+      'api::fb-ad.fb-ad'
+    >;
+    fb_campaign_id: Attribute.String;
+    fb_page: Attribute.Relation<
+      'api::fb-campaign.fb-campaign',
+      'manyToOne',
+      'api::fb-page.fb-page'
+    >;
+    impressions: Attribute.String;
+    lifetime_budget: Attribute.String;
+    name: Attribute.String;
+    objective: Attribute.String;
+    reach: Attribute.String;
+    spend: Attribute.String;
+    updatedAt: Attribute.DateTime;
+    updatedBy: Attribute.Relation<
+      'api::fb-campaign.fb-campaign',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiFbPageReactionFbPageReaction extends Schema.CollectionType {
+  collectionName: 'fb_page_reactions';
+  info: {
+    description: '';
+    displayName: 'fbPageReaction';
+    pluralName: 'fb-page-reactions';
+    singularName: 'fb-page-reaction';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    angers: Attribute.Integer;
+    createdAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::fb-page-reaction.fb-page-reaction',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    date: Attribute.DateTime;
+    hahas: Attribute.Integer;
+    like: Attribute.Integer;
+    loves: Attribute.Integer;
+    sorrys: Attribute.Integer;
+    updatedAt: Attribute.DateTime;
+    updatedBy: Attribute.Relation<
+      'api::fb-page-reaction.fb-page-reaction',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    wows: Attribute.Integer;
+  };
+}
+
+export interface ApiFbPageFbPage extends Schema.CollectionType {
+  collectionName: 'fb_pages';
+  info: {
+    description: '';
+    displayName: 'fbPage';
+    pluralName: 'fb-pages';
+    singularName: 'fb-page';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    audience_growths: Attribute.Relation<
+      'api::fb-page.fb-page',
+      'oneToMany',
+      'api::audience-growth.audience-growth'
+    >;
+    category: Attribute.String;
+    createdAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::fb-page.fb-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    daily_fb_page_analytics: Attribute.Relation<
+      'api::fb-page.fb-page',
+      'oneToMany',
+      'api::daily-fb-page-analytic.daily-fb-page-analytic'
+    >;
+    facebook_ad_account_id: Attribute.String;
+    facebook_page_id: Attribute.String;
+    fb_campaigns: Attribute.Relation<
+      'api::fb-page.fb-page',
+      'oneToMany',
+      'api::fb-campaign.fb-campaign'
+    >;
+    icon: Attribute.String;
+    name: Attribute.String;
+    updatedAt: Attribute.DateTime;
+    updatedBy: Attribute.Relation<
+      'api::fb-page.fb-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface PluginContentReleasesRelease extends Schema.CollectionType {
   collectionName: 'strapi_releases';
   info: {
@@ -798,6 +1130,14 @@ declare module '@strapi/types' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::audience-growth.audience-growth': ApiAudienceGrowthAudienceGrowth;
+      'api::daily-fb-page-analytic.daily-fb-page-analytic': ApiDailyFbPageAnalyticDailyFbPageAnalytic;
+      'api::fb-ad-insight.fb-ad-insight': ApiFbAdInsightFbAdInsight;
+      'api::fb-ad.fb-ad': ApiFbAdFbAd;
+      'api::fb-admin-user.fb-admin-user': ApiFbAdminUserFbAdminUser;
+      'api::fb-campaign.fb-campaign': ApiFbCampaignFbCampaign;
+      'api::fb-page-reaction.fb-page-reaction': ApiFbPageReactionFbPageReaction;
+      'api::fb-page.fb-page': ApiFbPageFbPage;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

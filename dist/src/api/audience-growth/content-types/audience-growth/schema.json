@@ -1,0 +1,31 @@
+{
+    "kind": "collectionType",
+    "collectionName": "audience_growths",
+    "info": {
+        "singularName": "audience-growth",
+        "pluralName": "audience-growths",
+        "displayName": "audienceGrowth",
+        "description": ""
+    },
+    "options": {
+        "draftAndPublish": false
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "date": {
+            "type": "datetime"
+        },
+        "followers": {
+            "type": "integer"
+        },
+        "new_followers": {
+            "type": "integer"
+        },
+        "fb_page": {
+            "type": "relation",
+            "relation": "manyToOne",
+            "target": "api::fb-page.fb-page",
+            "inversedBy": "audience_growths"
+        }
+    }
+}

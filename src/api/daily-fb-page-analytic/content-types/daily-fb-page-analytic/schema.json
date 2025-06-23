@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "daily_fb_page_analytics",
+  "info": {
+    "singularName": "daily-fb-page-analytic",
+    "pluralName": "daily-fb-page-analytics",
+    "displayName": "dailyFBPageAnalytic",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "date": {
+      "type": "datetime"
+    },
+    "impressions": {
+      "type": "integer"
+    },
+    "views": {
+      "type": "integer"
+    },
+    "reach": {
+      "type": "integer"
+    },
+    "followers": {
+      "type": "integer"
+    },
+    "engagements": {
+      "type": "integer"
+    },
+    "fb_page": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::fb-page.fb-page",
+      "inversedBy": "daily_fb_page_analytics"
+    }
+  }
+}
